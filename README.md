@@ -14,8 +14,8 @@ To be update soon
 OR
 ```
 @misc{[Table-Extraction-for-Geoscience-Literature],
-    title={[Table Extraction for Geoscience Literature]},
-    author={Shen, Yifei and Li, Qi and Zhang, Shao and Xu, Hui and Jia, Yuting and Wen, Ying and Wang, Dakuo and Fu, Luoyi and Wang, Xinbing and Zhou, Chenghu},
+    title={Table Extraction for Geoscience Literature},
+    author={Shen, Yifei and Li, Qi and Zhang, Shao and Guo, Jia and Shi, Tao and Jia, Yuting and Wen, Ying and Wang, Xinbing},
     booktitle={GitHub},
     year={2023},
     url={https://github.com/ShaoZhang0115/Table-Extraction-for-Geoscience-Literature}
