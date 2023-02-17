@@ -1,8 +1,8 @@
-#Table-Extraction-for-Geoscience-Literature
+# Table-Extraction-for-Geoscience-Literature
 
 To be update soon
 
-##Citation
+## Citation
 ```
 @article{zhang2023GeoDeepShovel,
   title={GeoDeepShovel: A Platform for Building Scientific Database from Geoscience Literature with AI Assistance},
