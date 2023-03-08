@@ -1,0 +1,27 @@
+version: "3"
+services:
+  table-outline-server:
+    container_name: table-outline-server
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        USER_ID: ${USER_ID:-1000}
+    image: table-outline-server:latest
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - capabilities:
+                - gpu
+    shm_size: "8gb"
+    ulimits:
+      memlock: -1
+      stack: 67108864
+    volumes:
+      - ./table_outline:/home/appuser/detectron2_repo/projects/table_outline
+    environment:
+      - DISPLAY=$DISPLAY
+      - NVIDIA_VISIBLE_DEVICES=all
+    ports:
+      - "9001:9092"

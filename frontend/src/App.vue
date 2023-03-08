@@ -13,7 +13,7 @@ export default {
 }
 </script>
 <style>
-@import "./static/reset.css";
+@import "./assets/reset.css";
 </style>
 <style lang="less">
 #app {

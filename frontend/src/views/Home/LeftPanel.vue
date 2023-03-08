@@ -194,7 +194,7 @@ export default {
         for(let key in res) {
           this.pdfImgList.push({
             id: key,
-            url: `http://10.10.10.225:8280/api/v1/file/pdf_img/${res[key]}`
+            url: `http://127.0.0.1:8000/api/v1/file/pdf_img/${res[key]}`
           })
         }
         // this.$nextTick(() => {

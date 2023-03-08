@@ -3,7 +3,7 @@ import request from './axios'
 // 获取PDF
 export function getFileImageList(paper_id) {
     return request({
-        url: `http://10.10.10.225:8280/api/v1/table/${paper_id}/images`,
+        url: `http://127.0.0.1:8000/api/v1/table/${paper_id}/images`,
         method: 'get',
         // responseType: 'blob'
     })
@@ -12,8 +12,8 @@ export function getFileImageList(paper_id) {
 // 上传文件
 export function uploadFile(data) {
     return request({
-        url: `http://10.10.10.225:8280/api/v1/file/file`,
-        // url: `https://ddescholar-dev.acemap.info/api/v1/paper_list/file`,
+        url: `http://127.0.0.1:8000/api/v1/file/file`,
+        // url: `https://127.0.0.1:8000/api/v1/paper_list/file`,
         headers: {
             'Content-Type': 'multipart/form-data'
         },
@@ -25,7 +25,7 @@ export function uploadFile(data) {
 // 获取table信息
 export function getTableInfo(paper_id) {
     return request({
-        url: 'https://ddescholar-dev.acemap.info/api/v2/table/parse_pdf',
+        url: 'https://127.0.0.1:8000/api/v2/table/parse_pdf',
         params: {
             paper_id
         },
@@ -44,7 +44,7 @@ export function getTableInfo(paper_id) {
 // 获取table外框线
 export function getTableOutLine(data) {
     return request({
-        url: `http://10.10.10.225:8280/api/v1/table/`,
+        url: `http://127.0.0.1:8000/api/v1/table/`,
         method: 'post',
         data
     })
@@ -53,7 +53,7 @@ export function getTableOutLine(data) {
 // 更新表格外框线
 export function updateTableOutLine(data) {
     return request({
-        url: `https://ddescholar-dev.acemap.info/api/v2/table/update_outline`,
+        url: `https://127.0.0.1:8000/api/v2/table/update_outline`,
         method: 'put',
         data
     })
@@ -62,7 +62,7 @@ export function updateTableOutLine(data) {
 // 删除表格外框线
 export function deleteTableOutLine(data) {
     return request({
-        url: `https://ddescholar-dev.acemap.info/api/v2/table/delete_outlines`,
+        url: `https://127.0.0.1:8000/api/v2/table/delete_outlines`,
         method: 'delete',
         data
     })
@@ -71,7 +71,7 @@ export function deleteTableOutLine(data) {
 // 获取表格内框线
 export function getTableInnerLine(paper_id, data) {
     return request({
-        url: `http://10.10.10.225:8280/api/v1/table/${paper_id}/cell`,
+        url: `http://127.0.0.1:8000/api/v1/table/${paper_id}/cell`,
         method: 'post',
         data
     })
@@ -80,7 +80,7 @@ export function getTableInnerLine(paper_id, data) {
 // 获取表格图片
 export function getTableImage(paper_id, data) {
     return request({
-        url: `http://10.10.10.225:8280/api/v1/table/${paper_id}/image_outlined`,
+        url: `http://127.0.0.1:8000/api/v1/table/${paper_id}/image_outlined`,
         method: 'post',
         data
     })
@@ -89,7 +89,7 @@ export function getTableImage(paper_id, data) {
 // 更改表格内框线
 export function updateInnerLine(project_id, paper_id, table_id, data) {
     return request({
-        url: `https://ddescholar-dev.acemap.info/api/v2/table/cell`,
+        url: `https://127.0.0.1:8000/api/v2/table/cell`,
         method: 'put',
         data
     })
@@ -98,7 +98,7 @@ export function updateInnerLine(project_id, paper_id, table_id, data) {
 // 获取表格内容
 export function getTableContent(paper_id, data) {
     return request({
-        url: `http://10.10.10.225:8280/api/v1/table/${paper_id}/draw`,
+        url: `http://127.0.0.1:8000/api/v1/table/${paper_id}/draw`,
         method: 'post',
         data
     })
@@ -110,7 +110,7 @@ export function downloadTable(paper_id, trans_flag, data) {
         headers: {
             'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8'
         },
-        url: `http://10.10.10.225:8280/api/v1/table/${paper_id}/${trans_flag}/excel`,
+        url: `http://127.0.0.1:8000/api/v1/table/${paper_id}/${trans_flag}/excel`,
         method: 'post',
         data,
         responseType: 'blob'
@@ -120,7 +120,7 @@ export function downloadTable(paper_id, trans_flag, data) {
 // 行列互换
 export function tableRowToCol(project_id, paper_id, table_id, data) {
     return request({
-        url: `https://ddescholar-dev.acemap.info/api/v2/table/${project_id}/${paper_id}/${table_id}/info`,
+        url: `https://127.0.0.1:8000/api/v2/table/${project_id}/${paper_id}/${table_id}/info`,
         method: 'put',
         data
     })
@@ -129,7 +129,7 @@ export function tableRowToCol(project_id, paper_id, table_id, data) {
 // 保存文本内容
 export function updateTableContent(project_id, paper_id, table_id, data) {
     return request({
-        url: `https://ddescholar-dev.acemap.info/api/v2/table/${project_id}/${paper_id}/${table_id}/content`,
+        url: `https://127.0.0.1:8000/api/v2/table/${project_id}/${paper_id}/${table_id}/content`,
         method: 'put',
         data
     })

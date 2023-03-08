@@ -8,9 +8,7 @@ RUN set -ex;  \
 COPY Pipfile /
 
 RUN set -ex ;\
-    sed -i -Ee "s/^(.*git.acemap.cn.*)$/#\1/g" Pipfile ;\
-    pipenv lock -r >/requirements.txt ;\
-    grep git.acemap.cn Pipfile | sed -Ee "s/^.*(https:\/\/.*git.acemap.cn.*)\/(.*?).git.*ref.*\"([0123456789.]+)\".*$/git+\1\/\2.git#egg=\2==\3/g" >>/requirements.txt
+    pipenv lock -r >/requirements.txt
 
 
 FROM python:3.9-buster
@@ -34,4 +32,4 @@ ENV PYTHONPATH=$PYTHONPATH:/app
 
 LABEL project="table-open-source-backend"
 
-CMD ["uvicorn", "backend.main:app", "--host", "0.0.0.0", "--port", "8000"]
+CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]

@@ -3,8 +3,8 @@ import os
 from fastapi import APIRouter, File, HTTPException, Path, UploadFile, status
 from fastapi.responses import FileResponse
 
-from backend.consts import PDF_IMAGE_DIR
-from backend.crud import pdf as pdf_handler
+from consts import PDF_IMAGE_DIR
+from crud import pdf as pdf_handler
 
 router = APIRouter()
 

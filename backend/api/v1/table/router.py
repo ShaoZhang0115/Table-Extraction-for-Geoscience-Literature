@@ -4,8 +4,8 @@ import logging
 from fastapi import APIRouter, Body, Form, HTTPException, Path, status
 from fastapi.responses import FileResponse
 
-from backend import models
-from backend.crud import pdf as pdf_handler, table as table_handler
+import models
+from crud import pdf as pdf_handler, table as table_handler
 from .model import *
 
 logger = logging.getLogger(__name__)

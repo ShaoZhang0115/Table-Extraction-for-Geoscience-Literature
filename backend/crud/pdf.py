@@ -11,9 +11,9 @@ from PIL import Image
 from fastapi import UploadFile as _UploadFile
 from lxml import etree
 
-from backend import models, settings
-from backend.common import get_upload_file_hash
-from backend.consts import PDF_DIR, PDF_IMAGE_DIR, PDF_XML_DIR
+import models, settings
+from common import get_upload_file_hash
+from consts import PDF_DIR, PDF_IMAGE_DIR, PDF_XML_DIR
 
 logger = logging.getLogger(__name__)
 

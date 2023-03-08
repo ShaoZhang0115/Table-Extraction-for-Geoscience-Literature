@@ -14,9 +14,9 @@ import requests
 import xlwt
 from PIL import Image
 
-from backend import models
-from backend.consts import PDF_DIR, PDF_IMAGE_DIR, PDF_PROCESS_DIR, PDF_XML_DIR, TABLE_CONTENT_FILE_DIR
-from backend.settings import TABLE_DETECT_SERVER_HOST
+import models
+from consts import PDF_DIR, PDF_IMAGE_DIR, PDF_PROCESS_DIR, PDF_XML_DIR, TABLE_CONTENT_FILE_DIR
+from settings import TABLE_DETECT_SERVER_HOST
 
 logger = logging.getLogger(__name__)
 
@@ -181,7 +181,7 @@ def detect_table_outlines(
         img_base64 = imgparse(os.path.join(PDF_IMAGE_DIR, page2image[page]))
 
         datas = json.dumps({"base64": img_base64})
-        tablecorlist_txt = requests.post(f"http://{TABLE_DETECT_SERVER_HOST}:9001/detect", data=datas)
+        tablecorlist_txt = requests.post(f"http://{TABLE_DETECT_SERVER_HOST}:9092/detect", data=datas)
         tablecorlist = json.loads(tablecorlist_txt.text)
         for i, tablecol in enumerate(tablecorlist["tablecorlist"]):
             res_tmp = {

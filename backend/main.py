@@ -8,9 +8,9 @@ from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel, Field
 from starlette.middleware.cors import CORSMiddleware
 
-from backend import consts, settings
-from backend.api import router
-from backend.core.exceptions import *
+import consts, settings
+from api import router
+from core.exceptions import *
 
 logger = logging.getLogger(__name__)
 
@@ -96,7 +96,7 @@ if __name__ == "__main__":
     import uvicorn
 
     uvicorn.run(
-        app="backend.main:app",
+        app="main:app",
         host="0.0.0.0",
         port=8000,
         reload=True,

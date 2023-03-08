@@ -1,0 +1,11 @@
+version: '3'
+services:
+  grobid-server:
+    image: lfoppiano/grobid:0.6.2
+    container_name: grobid-server
+    restart: always
+    ports:
+      - "8074:8070"
+      - "8075:8071"
+    volumes:
+      - ./grobid.properties:/opt/grobid/grobid-home/config/grobid.properties:ro

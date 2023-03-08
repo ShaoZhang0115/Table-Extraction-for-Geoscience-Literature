@@ -1,0 +1,71 @@
+version: "3.8"
+services:
+  table-backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    image: table-backend:latest
+    command: uvicorn main:app --host 0.0.0.0 --port 8000 --log-config log.yaml --log-level debug --reload
+    container_name: table-backend
+    restart: always
+    healthcheck:
+      interval: 1m
+      timeout: 3s
+      retries: 3
+      test: curl localhost:8000/ping
+    environment:
+      - TZ=Asia/Shanghai
+    ports:
+      - 8000:8000
+  table-frontend:
+    build:
+      context: ./frontend/
+      dockerfile: Dockerfile
+    image: table-frontend:latest
+    container_name: table-frontend
+    restart: unless-stopped
+    ports:
+      - ${PROJECT_PORT:-8080}:8080
+    healthcheck:
+      interval: 1m
+      timeout: 3s
+      retries: 3
+      test: curl http://localhost:3000/
+    environment:
+      - TZ=Asia/Shanghai
+    command: npm run ${START_COMMAND:-serve}
+  grobid-server:
+    image: lfoppiano/grobid:0.6.2
+    container_name: grobid-server
+    restart: always
+    ports:
+      - "8074:8070"
+      - "8075:8071"
+    volumes:
+      - ./docker/grobid-server/grobid.properties:/opt/grobid/grobid-home/config/grobid.properties:ro
+  table-outline-server:
+    container_name: table-outline-server
+    build:
+      context: ./docker/table-outline-server/
+      dockerfile: Dockerfile
+      args:
+        USER_ID: ${USER_ID:-1000}
+    image: table-outline-server:latest
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - capabilities:
+                - gpu
+    shm_size: "8gb"
+    ulimits:
+      memlock: -1
+      stack: 67108864
+    volumes:
+      - ./docker/table-outline-server/table_outline:/home/appuser/detectron2_repo/projects/table_outline
+    environment:
+      - DISPLAY=$DISPLAY
+      - NVIDIA_VISIBLE_DEVICES=all
+    ports:
+      - "9092:9092"
+

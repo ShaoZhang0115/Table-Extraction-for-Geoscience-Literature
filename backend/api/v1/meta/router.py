@@ -1,7 +1,7 @@
 from fastapi import APIRouter, Path
 
-from backend.crud import pdf as pdf_handler
-from backend.models import PdfInfo
+from crud import pdf as pdf_handler
+from models import PdfInfo
 
 router = APIRouter()
 

@@ -1,6 +1,16 @@
 # Table-Extraction-for-Geoscience-Literature
 
-To be update soon
+## Installation
+
+### Docker
+
+It is recommended to install using a Docker container.
+
+model Url: [https://layoutlm.blob.core.windows.net/tablebank/model_zoo/detection/All_X152/model_final.pth](https://layoutlm.blob.core.windows.net/tablebank/model_zoo/detection/All_X152/model_final.pth)
+
+Download the model and put it in the `docker/table-outline-server/table_outline/`
+
+We provide a docker-compose.yml configuration file. Clone this repository and execute docker-compose up -d to start the container.
 
 ## Citation
 ```
