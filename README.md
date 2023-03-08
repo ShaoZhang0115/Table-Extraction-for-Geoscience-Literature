@@ -13,15 +13,24 @@ Download the model and put it in the `docker/table-outline-server/table_outline/
 We provide a docker-compose.yml configuration file. Clone this repository and execute docker-compose up -d to start the container.
 
 ## Citation
+Our Paper
 ```
-@article{zhang2023GeoDeepShovel,
-  title={GeoDeepShovel: A Platform for Building Scientific Database from Geoscience Literature with AI Assistance},
-  author={Zhang, Shao and Xu, Hui and Jia, Yuting and Wen, Ying and Wang, Dakuo and Fu, Luoyi and Wang, Xinbing and Zhou, Chenghu},
-  journal={Geoscience Data Journal},
-  year={2023}
+@article{https://doi.org/10.1002/gdj3.186,
+author = {Zhang, Shao and Xu, Hui and Jia, Yuting and Wen, Ying and Wang, Dakuo and Fu, Luoyi and Wang, Xinbing and Zhou, Chenghu},
+title = {GeoDeepShovel: A platform for building scientific database from geoscience literature with AI assistance},
+journal = {Geoscience Data Journal},
+volume = {n/a},
+number = {n/a},
+pages = {},
+keywords = {artificial intelligence, big data-driven discovery, data extraction, scientific database, human-computer interaction},
+doi = {https://doi.org/10.1002/gdj3.186},
+url = {https://rmets.onlinelibrary.wiley.com/doi/abs/10.1002/gdj3.186},
+eprint = {https://rmets.onlinelibrary.wiley.com/doi/pdf/10.1002/gdj3.186}
 }
+
+
 ```
-OR
+This Repo
 ```
 @misc{[Table-Extraction-for-Geoscience-Literature],
     title={Table Extraction for Geoscience Literature},
