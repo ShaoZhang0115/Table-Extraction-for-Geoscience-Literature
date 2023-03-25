@@ -12,6 +12,9 @@ Download the model and put it in the `docker/table-outline-server/table_outline/
 
 We provide a docker-compose.yml configuration file. Clone this repository and execute docker-compose up -d to start the container.
 
+## Demo
+The Demo is available at https://ddescholar.acemap.info/table-extraction
+
 ## Citation
 Our Paper
 ```
