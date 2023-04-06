@@ -1,6 +1,6 @@
 # Table-Extraction-for-Geoscience-Literature
 
-Here is a system for table extraction from literature. Our models are specifivally trained at the geoscience literature, but can also process the literature from other areas.
+Here is a system for table extraction from literature. Our models are specificvally trained at the geoscience literature, but can also process the literature from other areas.
 
 ## Installation
 
