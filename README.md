@@ -1,6 +1,9 @@
 # Table-Extraction-for-Geoscience-Literature
 
 Here is a system for table extraction from literature. Our models are specificvally trained at the geoscience literature, but can also process the literature from other areas.
+Our Paper: 
+- HCI & AI: [KnowledgeShovel: An AI-in-the-Loop Document Annotation System for Scientific Knowledge Base Construction](https://arxiv.org/abs/2210.02830)
+- Geoscience & Data:[GeoDeepShovel: A platform for building scientific database from geoscience literature with AI assistance](https://rmets.onlinelibrary.wiley.com/doi/full/10.1002/gdj3.186)
 
 ## Installation
 
